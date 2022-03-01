@@ -25,24 +25,24 @@ async def on_ready():
 @bot.command()
 async def helpdank(ctx):
     await ctx.message.delete()
-    await ctx.send('$$AutoDank: Pls beg, Pls dig, Pls fish, pls hunt, dep all. $$StopAutoDank: Stops the bot. This code can bypass ban')
+    await ctx.send('$$AutoDank: Pls beg, Pls dig, Pls fish, pls hunt, dep all. $$StopAutoDank: Stops the bot.')
 
 @bot.command()
 async def help(ctx):
     await ctx.message.delete()
-    await ctx.send('$$AutoDank: Pls beg, Pls dig, Pls fish, pls hunt, dep all. $$StopAutoDank: Stops the bot. This code can bypass ban')
+    await ctx.send('$$AutoDank: Pls beg, Pls dig, Pls fish, pls hunt, dep all. $$StopAutoDank: Stops the bot.')
 
 @bot.command()
 async def stopautodank(ctx):
     await ctx.message.delete()
-    await ctx.send('AutoDank is now Disabled blush')
+    await ctx.send('AutoDank is now Disabled :blush:')
     global dmcs
     dmcs = False
 
 @bot.command(pass_context=True)
 async def autodank(ctx):
     await ctx.message.delete()
-    await ctx.send('AutoDank is now Enabled blush')
+    await ctx.send('AutoDank is now Enabled :blush:')
     global dmcs
     dmcs = True
     while dmcs:
