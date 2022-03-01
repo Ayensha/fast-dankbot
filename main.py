@@ -19,7 +19,8 @@ bot = commands.Bot(command_prefix=prefix,
 @bot.event
 async def on_ready():
     await bot.change_presence(status=discord.Status.offline)
-    print("Bot is ready!")
+    print("{0.user} is ready!".format(bot))
+
 
 @bot.command()
 async def helpdank(ctx):
