@@ -31,16 +31,6 @@ async def stopbump(ctx):
 
   
   
-#autobump command
-@bot.command()
-async def autobump(ctx):
-  await ctx.send("Starting in 5 seconds")
-  await asyncio.sleep(5)
-  global dmcs
-  dmcs = True
-  while dmcs:
-    await ctx.send("/bump")
-    await asyncio.sleep(2)
 
 @bot.command()
 async def helpdank(ctx):
