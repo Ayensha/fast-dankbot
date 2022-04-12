@@ -21,16 +21,6 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.offline)
     print("{0.user} is ready!".format(bot))
 
-@bot.command()
-async def stopbump(ctx):
-  await ctx.send("Stopping in 5 seconds")
-  await asyncio.sleep(5)
-  global dmcs
-  dmcs=False
-  await ctx.send("Done 👍")
-
-  
-  
 
 @bot.command()
 async def helpdank(ctx):
