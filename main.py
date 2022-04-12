@@ -21,6 +21,26 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.offline)
     print("{0.user} is ready!".format(bot))
 
+@bot.command()
+async def stopbump(ctx):
+  await ctx.send("Stopping in 5 seconds")
+  await asyncio.sleep(5)
+  global dmcs
+  dmcs=False
+  await ctx.send("Done 👍")
+
+  
+  
+#autobump command
+@bot.command()
+async def autobump(ctx):
+  await ctx.send("Starting in 5 seconds")
+  await asyncio.sleep(5)
+  global dmcs
+  dmcs = True
+  while dmcs:
+    await ctx.send("/bump")
+    await asyncio.sleep(2)
 
 @bot.command()
 async def helpdank(ctx):
@@ -35,10 +55,10 @@ async def help(ctx):
 @bot.command()
 async def stopautodank(ctx):
     await ctx.message.delete()
-    await ctx.send('AutoDank is now Disabled :blush:')
-    global dmcs
-    dmcs = False
-
+    await ctx.send('AutoDank is now Disabled :blush: to enable it again rerun the replit')
+    await bot.close()
+    
+  
 @bot.command(pass_context=True)
 async def autodank(ctx):
     await ctx.message.delete()
@@ -48,6 +68,9 @@ async def autodank(ctx):
     while dmcs:
         async with ctx.typing():
             await asyncio.sleep(5)
+            await ctx.send('pls beg')
+            print(f"{Fore.GREEN}succefully sent pls beg")
+            await asyncio.sleep(1)
             await ctx.send('pls fish')
             print(f"{Fore.GREEN}succefully sent pls fish")
             await asyncio.sleep(1)
@@ -56,12 +79,24 @@ async def autodank(ctx):
             await asyncio.sleep(1)
             await ctx.send('pls hunt')
             print(f"{Fore.GREEN}succefully sent pls hunt")
-            await ctx.send('pls beg')
-            print(f"{Fore.GREEN}succefully sent pls beg")
             await asyncio.sleep(1)
             await ctx.send('pls dep all')
             print(f"{Fore.GREEN}succefully sent pls dep all")
-            await asyncio.sleep(45)
+            await asyncio.sleep(34)
+            await ctx.send('pls fish')
+            print(f"{Fore.GREEN}succefully sent pls fish")
+            await asyncio.sleep(1)
+            await ctx.send('pls dig')
+            print(f"{Fore.GREEN}succefully sent pls dig")
+            await asyncio.sleep(1)
+            await ctx.send('pls hunt')
+            print(f"{Fore.GREEN}succefully sent pls hunt")
+            await ctx.send('pls dep all')
+            print(f"{Fore.GREEN}succefully sent pls dep all")
+            await asyncio.sleep(1)
+            await ctx.send('pls beg')
+            print(f"{Fore.GREEN}succefully sent pls beg")
+            await asyncio.sleep(39)
            
 
 keep_alive()
